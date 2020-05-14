@@ -6,15 +6,54 @@ document.querySelector("a.lnk:nth-child(2)").onclick = function() {
             document.querySelector("a.lnk:nth-child(2) .text").textContent = "Contact Me";
         }
         var selection = document.querySelectorAll(".card-inner.animated");
+        if (document.querySelector("#world-map-card").classList.contains("active")) {
+            document.querySelector("#world-map-card").classList.toggle("active");
+            document.querySelector("#world-map-card").classList.toggle("hidden");
+            document.querySelector("#world-map-card").classList.toggle("fadeInLeft");
+            document.querySelector("#world-map-card").classList.toggle("fadeOutLeft");
+            document.querySelector("#about-card").classList.toggle("active");
+            document.querySelector("#about-card").classList.toggle("hidden");
+            document.querySelector("#about-card").classList.toggle("fadeInLeft");
+            document.querySelector("#about-card").classList.toggle("fadeOutLeft");
+        } else {
+            selection.forEach(function(card) {
+                if (card.id != "world-map-card") {
+                    card.classList.toggle("hidden");;
+                    card.classList.toggle("fadeInLeft");;
+                    card.classList.toggle("fadeOutLeft");;
+                }
+            });
+            var selection = document.querySelectorAll(".card-inner.active.animated");
+            selection.forEach(function(card) {
+                if (card.id != "world-map-card") {
+                    card.classList.toggle("active");
+                }
+            });
+            document.querySelector(".third-element").classList.toggle("border-line-v");
+        }
+    }
+};
+
+document.querySelector("div.world-map").onclick = function() {
+    if (window.innerWidth > 1199) {
+        var selection = document.querySelectorAll(".card-inner.animated");
         selection.forEach(function(card) {
-            card.classList.toggle("hidden");;
-            card.classList.toggle("fadeInLeft");;
-            card.classList.toggle("fadeOutLeft");;
+            if (!card.classList.contains("hidden")) {
+                card.classList.toggle("hidden");
+                card.classList.toggle("fadeInLeft");
+                card.classList.toggle("fadeOutLeft");
+            }
         });
         var selection = document.querySelectorAll(".card-inner.active.animated");
         selection.forEach(function(card) {
-            card.classList.toggle("active");
+            if (card.classList.contains("active")) {
+                card.classList.toggle("active");
+            }
         });
+        document.querySelector("#world-map-card").classList.toggle("active");
+        document.querySelector("#world-map-card").classList.toggle("hidden");
+        document.querySelector("#world-map-card").classList.toggle("fadeInLeft");
+        document.querySelector("#world-map-card").classList.toggle("fadeOutLeft");
         document.querySelector(".third-element").classList.toggle("border-line-v");
     }
 };
