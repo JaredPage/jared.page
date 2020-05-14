@@ -481,6 +481,7 @@ input[type="submit"] {
 .card-inner .card-wrap {
     padding: 30px 30px 0 30px;
     position: relative;
+    overflow-y: hidden;
 }
 
 .content {
@@ -720,7 +721,7 @@ ul {
     font-size: 40px;
 }
 
-a.daisy:hover {
+a.big:hover {
     text-decoration: none;
     color: #626262;
 }
@@ -969,6 +970,49 @@ a.daisy:hover {
 
 .notfound-social .fa-stack-overflow {
     color: #ef8236
+}
+
+@media (min-width: 1200px) {
+    .scrollbar {
+        /* margin-left: 22px; */
+        float: left;
+        height: 100%;
+        width: 100%;
+        /* background: #F5F5F5; */
+        overflow-y: scroll;
+        /* margin-bottom: 25px; */
+    }
+    .force-overflow {
+        min-height: calc(100% + 330px);
+    }
+    #style-4::-webkit-scrollbar,
+    #style-5::-webkit-scrollbar,
+    #style-6::-webkit-scrollbar,
+    #style-7::-webkit-scrollbar,
+    #style-8::-webkit-scrollbar,
+    #style-9::-webkit-scrollbar,
+    #style-10::-webkit-scrollbar,
+    #style-11::-webkit-scrollbar {
+        width: 15px;
+        background-color: transparent;
+    }
+    /**  STYLE 11 */
+    #style-11::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(204, 204, 204, 0.808);
+    }
+    #style-11::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: linear-gradient(left, #fff, #78cc6d);
+        border: 1px solid #aaa;
+    }
+    #style-11::-webkit-scrollbar-thumb:hover {
+        background: #78cc6d83;
+    }
+    #style-11::-webkit-scrollbar-thumb:active {
+        background: linear-gradient(left, #22ADD4, rgb(87, 5, 87));
+    }
 }
 
 
